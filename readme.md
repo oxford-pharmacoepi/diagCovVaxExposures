@@ -1,5 +1,5 @@
 
-diagCovVaxExposures- CohortDiagnostics package to assess Covid-19 vaccines
+diagCovVaxExposures: CohortDiagnostics package to assess Covid-19 vaccines
 ========================================================================================================================================================
 
 ## Running the analysis
@@ -22,4 +22,4 @@ diagCovVaxExposures- CohortDiagnostics package to assess Covid-19 vaccines
 <li><i>databaseDescription <- "...."</i>: A brief description your database</li>  
 <li>After adding these details, you should then be able to run the line <i>diagCovVaxExposures::runCohortDiagnostics(...)</i> line which will run all of the required analyses. Once run, you can view you results by running the lines <i>CohortDiagnostics::preMergeDiagnosticsFiles(file.path(outputFolder, "diagnosticsExport"))</i> and <i>CohortDiagnostics::launchDiagnosticsExplorer(file.path(outputFolder, "diagnosticsExport"))</i></li> </ul>  
 
- # NOTE: The package may take a long time to run when the vaccinated cohorts are large.
+ ### NOTE: The package may take a long time to run when the vaccinated cohorts are large.
