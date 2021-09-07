@@ -1,0 +1,9 @@
+*CodeToRun_local*
+Shiny diagCovCoagExposures/
+*.Rhistory*
+*.Rbuildignore*
+*.sqlite*
+*.RProj.user*
+diagCovCoagExposures/postgresql-42.2.18.jar
+Output/
+diagCovCoagExposures/errorReportSql.txt

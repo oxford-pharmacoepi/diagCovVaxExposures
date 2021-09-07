@@ -1,0 +1,47 @@
+---
+title: "Concept sets"
+output:
+  html_document:
+    highlight: tango
+    theme: united
+    toc: yes
+    toc_depth: 4
+    toc_float: yes
+editor_options:
+  chunk_output_type: console
+---
+```{r options, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(dplyr)
+library(stringr)
+library(kableExtra)
+load("concept.sets.RDS")
+```
+
+
+```{r, results='asis'}
+for (i in 1:length(concept.sets)) {
+working.name<- concept.sets[[i]]$name[1] 
+working.name<- str_replace_all(working.name, "\\[|\\]", "")
+working.name<- str_replace(working.name, "EB", "")
+working.name<- str_replace(working.name, "CovCoag", "") 
+working.name<- str_replace(working.name, "- diagnosis", "") 
+working.name<- trimws(working.name)
+working.name<-str_to_sentence(working.name)
+
+ cat("###", working.name, "\n")
+    print(kable(concept.sets[[i]] %>% 
+                  mutate(name=working.name), 
+             col.names = c("Concept set", "Concept ID", "Concept name",
+                           "Vocabulary", 
+                           "Is excluded?",
+                           "Include descendants?")) %>% 
+ kable_styling(bootstrap_options = c("striped", "bordered")))
+     
+    cat('\n\n<!-- -->\n\n') 
+   }
+
+```

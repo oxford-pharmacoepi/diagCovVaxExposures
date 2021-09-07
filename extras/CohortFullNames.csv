@@ -1,0 +1,7 @@
+name,FullName
+vax_any,vaccinated with any 1st dose Covid-19 vaccine
+vax_az,vaccinated with AZ 1st dose Covid-19 vaccine
+vax_janssen,vaccinated with Janssen 1st dose Covid-19 vaccine
+vax_moderna,vaccinated with Moderna 1st dose Covid-19 vaccine
+vax_mrna,vaccinated with mRNA (Pfizer or Moderna or unknow brand) 1st dose Covid-19 vaccine
+vax_pfizer,vaccinated with Pfizer 1st dose Covid-19 vaccine
