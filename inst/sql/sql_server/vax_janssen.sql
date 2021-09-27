@@ -5,20 +5,13 @@ CREATE TABLE #Codesets (
 ;
 
 INSERT INTO #Codesets (codeset_id, concept_id)
-SELECT 3 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
+SELECT 0 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
 ( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (37003516,37003436,37003518,35894915,35897994,1230962,35895095,35895096,35891709,35895097,35891603,35895098,37003432,724905,702866,766236,766237,766239,766234,766240,766231,766235,766233,766232,766241,766238,724906,724907,35895192,1227568,1230963,42796343,35891522,35895099,35891864,35895100,35891906,35895190,35895191,35891484,35891695,35891649,35895193,35891890,35895194,35891433,42639778,42639775,42639779,42639776,42639780,42639777,36391504,42796198,1219271,42797615,724904,829421,36388974,37003431,37003435,37003434,37003517,37003433,42797616)
-
-) I
-) C;
-INSERT INTO #Codesets (codeset_id, concept_id)
-SELECT 6 as codeset_id, c.concept_id FROM (select distinct I.concept_id FROM
-( 
-  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (702866,766241,1230963,766235)
+  select concept_id from @vocabulary_database_schema.CONCEPT where concept_id in (702866,766235,766241,1230963,739906,739905,739903,739902,739901,35896177,35896124,35896164,1226309)
 UNION  select c.concept_id
   from @vocabulary_database_schema.CONCEPT c
   join @vocabulary_database_schema.CONCEPT_ANCESTOR ca on c.concept_id = ca.descendant_concept_id
-  and ca.ancestor_concept_id in (702866,766241,1230963,766235)
+  and ca.ancestor_concept_id in (702866,766235,766241,1230963,739906,739905,739903,739902,739901,35896177,35896124,35896164,1226309)
   and c.invalid_reason is null
 
 ) I
@@ -42,18 +35,33 @@ select C.person_id, C.drug_exposure_id as event_id, C.drug_exposure_start_date a
        C.drug_exposure_start_date as sort_date
 from 
 (
-  select de.* , row_number() over (PARTITION BY de.person_id ORDER BY de.drug_exposure_start_date, de.drug_exposure_id) as ordinal
+  select de.* 
   FROM @cdm_database_schema.DRUG_EXPOSURE de
-JOIN #Codesets codesets on ((de.drug_source_concept_id = codesets.concept_id and codesets.codeset_id = 6))
+JOIN #Codesets codesets on ((de.drug_concept_id = codesets.concept_id and codesets.codeset_id = 0))
 ) C
 
-WHERE C.drug_exposure_start_date > DATEFROMPARTS(2020, 12, 01)
-AND C.ordinal = 1
+
 -- End Drug Exposure Criteria
+
+UNION ALL
+-- Begin Drug Exposure Criteria
+select C.person_id, C.drug_exposure_id as event_id, C.drug_exposure_start_date as start_date,
+       COALESCE(C.drug_exposure_end_date, DATEADD(day, 1, C.drug_exposure_start_date)) as end_date, C.drug_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
+       C.drug_exposure_start_date as sort_date
+from 
+(
+  select de.* 
+  FROM @cdm_database_schema.DRUG_EXPOSURE de
+JOIN #Codesets codesets on ((de.drug_source_concept_id = codesets.concept_id and codesets.codeset_id = 0))
+) C
+
+
+-- End Drug Exposure Criteria
+
 
   ) E
 	JOIN @cdm_database_schema.observation_period OP on E.person_id = OP.person_id and E.start_date >=  OP.observation_period_start_date and E.start_date <= op.observation_period_end_date
-  WHERE DATEADD(day,365,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE
+  WHERE DATEADD(day,0,OP.OBSERVATION_PERIOD_START_DATE) <= E.START_DATE AND DATEADD(day,0,E.START_DATE) <= OP.OBSERVATION_PERIOD_END_DATE
 ) P
 WHERE P.ordinal = 1
 -- End Primary Events
@@ -91,88 +99,6 @@ FROM
     -- Begin Correlated Criteria
 SELECT 0 as index_id, p.person_id, p.event_id
 FROM #qualified_events P
-LEFT JOIN
-(
-  -- Begin Drug Exposure Criteria
-select C.person_id, C.drug_exposure_id as event_id, C.drug_exposure_start_date as start_date,
-       COALESCE(C.drug_exposure_end_date, DATEADD(day, 1, C.drug_exposure_start_date)) as end_date, C.drug_concept_id as TARGET_CONCEPT_ID, C.visit_occurrence_id,
-       C.drug_exposure_start_date as sort_date
-from 
-(
-  select de.* 
-  FROM @cdm_database_schema.DRUG_EXPOSURE de
-JOIN #Codesets codesets on ((de.drug_concept_id = codesets.concept_id and codesets.codeset_id = 3))
-) C
-
-
--- End Drug Exposure Criteria
-
-) A on A.person_id = P.person_id  AND A.START_DATE <= DATEADD(day,-1,P.START_DATE)
-GROUP BY p.person_id, p.event_id
-HAVING COUNT(A.TARGET_CONCEPT_ID) = 0
--- End Correlated Criteria
-
-  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id
-  GROUP BY E.person_id, E.event_id
-  HAVING COUNT(index_id) = 1
-) G
--- End Criteria Group
-) AC on AC.person_id = pe.person_id AND AC.event_id = pe.event_id
-) Results
-;
-
-select 1 as inclusion_rule_id, person_id, event_id
-INTO #Inclusion_1
-FROM 
-(
-  select pe.person_id, pe.event_id
-  FROM #qualified_events pe
-  
-JOIN (
--- Begin Criteria Group
-select 0 as index_id, person_id, event_id
-FROM
-(
-  select E.person_id, E.event_id 
-  FROM #qualified_events E
-  INNER JOIN
-  (
-    -- Begin Demographic Criteria
-SELECT 0 as index_id, e.person_id, e.event_id
-FROM #qualified_events E
-JOIN @cdm_database_schema.PERSON P ON P.PERSON_ID = E.PERSON_ID
-WHERE YEAR(E.start_date) - P.year_of_birth > 18
-GROUP BY e.person_id, e.event_id
--- End Demographic Criteria
-
-  ) CQ on E.person_id = CQ.person_id and E.event_id = CQ.event_id
-  GROUP BY E.person_id, E.event_id
-  HAVING COUNT(index_id) = 1
-) G
--- End Criteria Group
-) AC on AC.person_id = pe.person_id AND AC.event_id = pe.event_id
-) Results
-;
-
-select 2 as inclusion_rule_id, person_id, event_id
-INTO #Inclusion_2
-FROM 
-(
-  select pe.person_id, pe.event_id
-  FROM #qualified_events pe
-  
-JOIN (
--- Begin Criteria Group
-select 0 as index_id, person_id, event_id
-FROM
-(
-  select E.person_id, E.event_id 
-  FROM #qualified_events E
-  INNER JOIN
-  (
-    -- Begin Correlated Criteria
-SELECT 0 as index_id, p.person_id, p.event_id
-FROM #qualified_events P
 INNER JOIN
 (
   -- Begin Observation Period Criteria
@@ -186,8 +112,7 @@ from
         FROM @cdm_database_schema.OBSERVATION_PERIOD op
 ) C
 
-WHERE C.observation_period_start_date < DATEFROMPARTS(2019, 12, 01)
-AND DATEDIFF(d,C.observation_period_start_date, C.observation_period_end_date) >= 365
+
 -- End Observation Period Criteria
 
 ) A on A.person_id = P.person_id  AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= P.OP_END_DATE AND A.START_DATE >= P.OP_START_DATE AND A.START_DATE <= DATEADD(day,-365,P.START_DATE) AND A.END_DATE >= DATEADD(day,0,P.START_DATE) AND A.END_DATE <= P.OP_END_DATE
@@ -206,19 +131,9 @@ HAVING COUNT(A.TARGET_CONCEPT_ID) >= 1
 
 SELECT inclusion_rule_id, person_id, event_id
 INTO #inclusion_events
-FROM (select inclusion_rule_id, person_id, event_id from #Inclusion_0
-UNION ALL
-select inclusion_rule_id, person_id, event_id from #Inclusion_1
-UNION ALL
-select inclusion_rule_id, person_id, event_id from #Inclusion_2) I;
+FROM (select inclusion_rule_id, person_id, event_id from #Inclusion_0) I;
 TRUNCATE TABLE #Inclusion_0;
 DROP TABLE #Inclusion_0;
-
-TRUNCATE TABLE #Inclusion_1;
-DROP TABLE #Inclusion_1;
-
-TRUNCATE TABLE #Inclusion_2;
-DROP TABLE #Inclusion_2;
 
 
 with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date, op_end_date, ordinal) as
@@ -233,7 +148,7 @@ with cteIncludedEvents(event_id, person_id, start_date, end_date, op_start_date,
   ) MG -- matching groups
 
   -- the matching group with all bits set ( POWER(2,# of inclusion rules) - 1 = inclusion_rule_mask
-  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),3)-1)
+  WHERE (MG.inclusion_rule_mask = POWER(cast(2 as bigint),1)-1)
 
 )
 select event_id, person_id, start_date, end_date, op_start_date, op_end_date
@@ -242,19 +157,81 @@ FROM cteIncludedEvents Results
 WHERE Results.ordinal = 1
 ;
 
--- date offset strategy
+-- custom era strategy
 
-select event_id, person_id, 
-  case when DATEADD(day,28,start_date) > start_date then DATEADD(day,28,start_date) else start_date end as end_date
+with ctePersons(person_id) as (
+	select distinct person_id from #included_events
+)
+
+select person_id, drug_exposure_start_date, drug_exposure_end_date
+INTO #drugTarget
+FROM (
+	select de.PERSON_ID, DRUG_EXPOSURE_START_DATE,  COALESCE(DRUG_EXPOSURE_END_DATE, DATEADD(day,DAYS_SUPPLY,DRUG_EXPOSURE_START_DATE), DATEADD(day,1,DRUG_EXPOSURE_START_DATE)) as DRUG_EXPOSURE_END_DATE 
+	FROM @cdm_database_schema.DRUG_EXPOSURE de
+	JOIN ctePersons p on de.person_id = p.person_id
+	JOIN #Codesets cs on cs.codeset_id = 0 AND de.drug_concept_id = cs.concept_id
+
+	UNION ALL
+
+	select de.PERSON_ID, DRUG_EXPOSURE_START_DATE,  COALESCE(DRUG_EXPOSURE_END_DATE, DATEADD(day,DAYS_SUPPLY,DRUG_EXPOSURE_START_DATE), DATEADD(day,1,DRUG_EXPOSURE_START_DATE)) as DRUG_EXPOSURE_END_DATE 
+	FROM @cdm_database_schema.DRUG_EXPOSURE de
+	JOIN ctePersons p on de.person_id = p.person_id
+	JOIN #Codesets cs on cs.codeset_id = 0 AND de.drug_source_concept_id = cs.concept_id
+) E
+;
+
+select et.event_id, et.person_id, ERAS.era_end_date as end_date
 INTO #strategy_ends
-from #included_events;
+from #included_events et
+JOIN 
+(
+  select ENDS.person_id, min(drug_exposure_start_date) as era_start_date, DATEADD(day,0, ENDS.era_end_date) as era_end_date
+  from
+  (
+    select de.person_id, de.drug_exposure_start_date, MIN(e.END_DATE) as era_end_date
+    FROM #drugTarget DE
+    JOIN 
+    (
+      --cteEndDates
+      select PERSON_ID, DATEADD(day,-1 * 56,EVENT_DATE) as END_DATE -- unpad the end date by 56
+      FROM
+      (
+				select PERSON_ID, EVENT_DATE, EVENT_TYPE, 
+				MAX(START_ORDINAL) OVER (PARTITION BY PERSON_ID ORDER BY event_date, event_type ROWS UNBOUNDED PRECEDING) AS start_ordinal,
+				ROW_NUMBER() OVER (PARTITION BY PERSON_ID ORDER BY EVENT_DATE, EVENT_TYPE) AS OVERALL_ORD -- this re-numbers the inner UNION so all rows are numbered ordered by the event date
+				from
+				(
+					-- select the start dates, assigning a row number to each
+					Select PERSON_ID, DRUG_EXPOSURE_START_DATE AS EVENT_DATE, 0 as EVENT_TYPE, ROW_NUMBER() OVER (PARTITION BY PERSON_ID ORDER BY DRUG_EXPOSURE_START_DATE) as START_ORDINAL
+					from #drugTarget D
+
+					UNION ALL
+
+					-- add the end dates with NULL as the row number, padding the end dates by 56 to allow a grace period for overlapping ranges.
+					select PERSON_ID, DATEADD(day,56,DRUG_EXPOSURE_END_DATE), 1 as EVENT_TYPE, NULL
+					FROM #drugTarget D
+				) RAWDATA
+      ) E
+      WHERE 2 * E.START_ORDINAL - E.OVERALL_ORD = 0
+    ) E on DE.PERSON_ID = E.PERSON_ID and E.END_DATE >= DE.DRUG_EXPOSURE_START_DATE
+    GROUP BY de.person_id, de.drug_exposure_start_date
+  ) ENDS
+  GROUP BY ENDS.person_id, ENDS.era_end_date
+) ERAS on ERAS.person_id = et.person_id 
+WHERE et.start_date between ERAS.era_start_date and ERAS.era_end_date;
+
+TRUNCATE TABLE #drugTarget;
+DROP TABLE #drugTarget;
 
 
 -- generate cohort periods into #final_cohort
 with cohort_ends (event_id, person_id, end_date) as
 (
 	-- cohort exit dates
-  -- End Date Strategy
+  -- By default, cohort exit at the event's op end date
+select event_id, person_id, op_end_date as end_date from #included_events
+UNION ALL
+-- End Date Strategy
 SELECT event_id, person_id, end_date from #strategy_ends
 
 ),
@@ -474,7 +451,6 @@ DROP TABLE #best_events;
 TRUNCATE TABLE #inclusion_rules;
 DROP TABLE #inclusion_rules;
 }
-
 
 
 
