@@ -7,6 +7,20 @@
         "items": [
           {
             "concept": {
+              "CONCEPT_CLASS_ID": "Precise Ingredient",
+              "CONCEPT_CODE": "2468230",
+              "CONCEPT_ID": 37003431,
+              "CONCEPT_NAME": "SARS-CoV-2 (COVID-19) vaccine, mRNA-BNT162b2",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "RxNorm"
+            }
+          },
+          {
+            "concept": {
               "CONCEPT_CLASS_ID": "Clinical Drug",
               "CONCEPT_CODE": "2468235",
               "CONCEPT_ID": 37003436,
@@ -22,7 +36,7 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "AMP",
-              "CONCEPT_CODE": "39115611000001103",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891709,
               "CONCEPT_NAME": "COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech)",
               "DOMAIN_ID": "Drug",
@@ -36,7 +50,7 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "AMPP",
-              "CONCEPT_CODE": "39214511000001101",
+              "CONCEPT_CODE": "3.92E+16",
               "CONCEPT_ID": 35895097,
               "CONCEPT_NAME": "COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech) (Pfizer-BioNTech) 1170 dose 195 x 6 dose vials",
               "DOMAIN_ID": "Drug",
@@ -50,7 +64,7 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "AMPP",
-              "CONCEPT_CODE": "39115711000001107",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891603,
               "CONCEPT_NAME": "COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech) (Pfizer-BioNTech) 6 dose",
               "DOMAIN_ID": "Drug",
@@ -59,6 +73,20 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "dm+d"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Clinical Drug Comp",
+              "CONCEPT_CODE": "2468232",
+              "CONCEPT_ID": 37003433,
+              "CONCEPT_NAME": "SARS-CoV-2 (COVID-19) vaccine, mRNA-BNT162b2 0.1 MG/ML",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "S",
+              "STANDARD_CONCEPT_CAPTION": "Standard",
+              "VOCABULARY_ID": "RxNorm"
             }
           },
           {
@@ -77,16 +105,16 @@
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "VMPP",
-              "CONCEPT_CODE": "39214411000001100",
-              "CONCEPT_ID": 35895192,
-              "CONCEPT_NAME": "Generic COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech) 1170 dose",
+              "CONCEPT_CLASS_ID": "CPT4",
+              "CONCEPT_CODE": "0002A",
+              "CONCEPT_ID": 766232,
+              "CONCEPT_NAME": "Pfizer-Biontech Covid-19 Vaccine Administration - Second Dose",
               "DOMAIN_ID": "Drug",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "dm+d"
+              "VOCABULARY_ID": "CPT4"
             }
           },
           {
@@ -101,6 +129,20 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "CPT4"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "VMPP",
+              "CONCEPT_CODE": "3.92E+16",
+              "CONCEPT_ID": 35895192,
+              "CONCEPT_NAME": "Generic COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech) 1170 dose",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "dm+d"
             }
           },
           {
@@ -120,7 +162,7 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMP",
-              "CONCEPT_CODE": "39116111000001100",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891484,
               "CONCEPT_NAME": "Generic COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech)",
               "DOMAIN_ID": "Drug",
@@ -134,7 +176,7 @@
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMPP",
-              "CONCEPT_CODE": "39115311000001108",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891695,
               "CONCEPT_NAME": "Generic COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose concentrate for suspension for injection multidose vials (Pfizer-BioNTech) 6 dose",
               "DOMAIN_ID": "Drug",
@@ -175,34 +217,6 @@
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "Precise Ingredient",
-              "CONCEPT_CODE": "2468230",
-              "CONCEPT_ID": 37003431,
-              "CONCEPT_NAME": "SARS-CoV-2 (COVID-19) vaccine, mRNA-BNT162b2",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "RxNorm"
-            }
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "Clinical Drug Comp",
-              "CONCEPT_CODE": "2468232",
-              "CONCEPT_ID": 37003433,
-              "CONCEPT_NAME": "SARS-CoV-2 (COVID-19) vaccine, mRNA-BNT162b2 0.1 MG/ML",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "S",
-              "STANDARD_CONCEPT_CAPTION": "Standard",
-              "VOCABULARY_ID": "RxNorm"
-            }
-          },
-          {
-            "concept": {
               "CONCEPT_CLASS_ID": "11-digit NDC",
               "CONCEPT_CODE": "59267100003",
               "CONCEPT_ID": 42797616,
@@ -217,16 +231,30 @@
           },
           {
             "concept": {
-              "CONCEPT_CLASS_ID": "CPT4",
-              "CONCEPT_CODE": "0002A",
-              "CONCEPT_ID": 766232,
-              "CONCEPT_NAME": "Pfizer-Biontech Covid-19 Vaccine Administration - Second Dose",
-              "DOMAIN_ID": "Drug",
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "ADM SARSCOV2 30MCG/0.3ML 1ST",
+              "CONCEPT_ID": 2042084532,
+              "CONCEPT_NAME": "ADM SARSCOV2 30MCG/0.3ML 1ST",
+              "DOMAIN_ID": "Observation",
               "INVALID_REASON": "V",
               "INVALID_REASON_CAPTION": "Valid",
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "CPT4"
+              "VOCABULARY_ID": "US_EMR_Drug"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "ADM SARSCOV2 30MCG/0.3ML 2ND",
+              "CONCEPT_ID": 2042118832,
+              "CONCEPT_NAME": "ADM SARSCOV2 30MCG/0.3ML 2ND",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "US_EMR_Drug"
             }
           }
         ]
@@ -243,6 +271,16 @@
       {
         "DrugExposure": {
           "DrugSourceConcept": 0
+        }
+      },
+      {
+        "Observation": {
+          "CodesetId": 0
+        }
+      },
+      {
+        "Observation": {
+          "ObservationSourceConcept": 0
         }
       }
     ],
@@ -302,10 +340,9 @@
     }
   ],
   "EndStrategy": {
-    "CustomEra": {
-      "DrugCodesetId": 0,
-      "GapDays": 56,
-      "Offset": 0
+    "DateOffset": {
+      "DateField": "StartDate",
+      "Offset": 1
     }
   },
   "CensoringCriteria": [],

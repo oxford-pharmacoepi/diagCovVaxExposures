@@ -1,7 +1,7 @@
 atlasId,atlasName,cohortId,name
-562,[XL] Covid-19 Vaccine age 18 at Dec 2020 fisrt dose MODERNA,101,vax_moderna
-560,[XL] Covid-19 Vaccine age 18 at Dec 2020 fisrt dose AZ,102,vax_az
-563,[XL] Covid-19 Vaccine age 18 at Dec 2020 fisrt dose mRNA,103,vax_mrna
-561,[XL] Covid-19 Vaccine age 18 at Dec 2020 fisrt dose JANSSEN,104,vax_janssen
-565,[XL] Covid-19 Vaccine age 18 at Dec 2020 fisrt dose Pfizer,105,vax_pfizer
-304,TTS_DVT,304,TTS_DVT
+101,vax_moderna,101,vax_moderna
+102,vax_az,102,vax_az
+103,vax_mrna,103,vax_mrna
+104,vax_janssen,104,vax_janssen
+105,vax_pfizer,105,vax_pfizer
+106,vax_viralv,106,vax_viralv

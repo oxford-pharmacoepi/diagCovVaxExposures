@@ -1,14 +1,14 @@
 {
   "ConceptSets": [
     {
-      "id": 1,
-      "name": "VAX_AZ",
+      "id": 0,
+      "name": "vax_az",
       "expression": {
         "items": [
           {
             "concept": {
               "CONCEPT_CLASS_ID": "11-digit NDC",
-              "CONCEPT_CODE": "00310122210",
+              "CONCEPT_CODE": "310122210",
               "CONCEPT_ID": 1230962,
               "CONCEPT_NAME": "AZD1222 Astrazeneca COVID-19 vaccine, DNA, spike protein, chimpanzee adenovirus Oxford 1 (ChAdOx1) vector, preservative free, 5x1010 viral particles/0.5mL dosage, for intramuscular use",
               "DOMAIN_ID": "Drug",
@@ -17,8 +17,7 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "NDC"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
@@ -32,8 +31,7 @@
               "STANDARD_CONCEPT": "S",
               "STANDARD_CONCEPT_CAPTION": "Standard",
               "VOCABULARY_ID": "CVX"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
@@ -47,8 +45,7 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "CPT4"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
@@ -62,8 +59,7 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "CPT4"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
@@ -77,88 +73,12 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "CPT4"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "AMP",
-              "CONCEPT_CODE": "39114911000001105",
-              "CONCEPT_ID": 35891522,
-              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "AMPP",
-              "CONCEPT_CODE": "39301311000001102",
-              "CONCEPT_ID": 35895099,
-              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 100 dose 10 x 10 dose vials",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "AMPP",
-              "CONCEPT_CODE": "39115111000001106",
-              "CONCEPT_ID": 35891864,
-              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 10 dose",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "AMPP",
-              "CONCEPT_CODE": "39301211000001105",
-              "CONCEPT_ID": 35895100,
-              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 80 dose 10 x 8 dose vials",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
-          },
-          {
-            "concept": {
-              "CONCEPT_CLASS_ID": "AMPP",
-              "CONCEPT_CODE": "39115011000001105",
-              "CONCEPT_ID": 35891906,
-              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 8 dose",
-              "DOMAIN_ID": "Drug",
-              "INVALID_REASON": "V",
-              "INVALID_REASON_CAPTION": "Valid",
-              "STANDARD_CONCEPT": "N",
-              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
-              "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
               "CONCEPT_CLASS_ID": "11-digit NDC",
-              "CONCEPT_CODE": "00310122215",
+              "CONCEPT_CODE": "310122215",
               "CONCEPT_ID": 1227568,
               "CONCEPT_NAME": "azd1222 50000000000{VP}/.5mL INTRAMUSCULAR INJECTION, SUSPENSION",
               "DOMAIN_ID": "Drug",
@@ -167,13 +87,82 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "NDC"
-            },
-            "includeDescendants": true
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "AMP",
+              "CONCEPT_CODE": "3.91E+16",
+              "CONCEPT_ID": 35891522,
+              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "dm+d"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "AMPP",
+              "CONCEPT_CODE": "3.93E+16",
+              "CONCEPT_ID": 35895099,
+              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 100 dose 10 x 10 dose vials",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "dm+d"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "AMPP",
+              "CONCEPT_CODE": "3.91E+16",
+              "CONCEPT_ID": 35891864,
+              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 10 dose",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "dm+d"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "AMPP",
+              "CONCEPT_CODE": "3.93E+16",
+              "CONCEPT_ID": 35895100,
+              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 80 dose 10 x 8 dose vials",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "dm+d"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "AMPP",
+              "CONCEPT_CODE": "3.91E+16",
+              "CONCEPT_ID": 35891906,
+              "CONCEPT_NAME": "COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials (AstraZeneca UK Ltd) 8 dose",
+              "DOMAIN_ID": "Drug",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "dm+d"
+            }
           },
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMP",
-              "CONCEPT_CODE": "39116211000001106",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891649,
               "CONCEPT_NAME": "Generic COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials",
               "DOMAIN_ID": "Drug",
@@ -182,13 +171,12 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMPP",
-              "CONCEPT_CODE": "39301111000001104",
+              "CONCEPT_CODE": "3.93E+16",
               "CONCEPT_ID": 35895193,
               "CONCEPT_NAME": "Generic COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials 100 dose",
               "DOMAIN_ID": "Drug",
@@ -197,13 +185,12 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMPP",
-              "CONCEPT_CODE": "39114811000001100",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891890,
               "CONCEPT_NAME": "Generic COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials 10 dose",
               "DOMAIN_ID": "Drug",
@@ -212,13 +199,12 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMPP",
-              "CONCEPT_CODE": "39301011000001100",
+              "CONCEPT_CODE": "3.93E+16",
               "CONCEPT_ID": 35895194,
               "CONCEPT_NAME": "Generic COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials 80 dose",
               "DOMAIN_ID": "Drug",
@@ -227,13 +213,12 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
+            }
           },
           {
             "concept": {
               "CONCEPT_CLASS_ID": "VMPP",
-              "CONCEPT_CODE": "39114711000001108",
+              "CONCEPT_CODE": "3.91E+16",
               "CONCEPT_ID": 35891433,
               "CONCEPT_NAME": "Generic COVID-19 Vaccine AstraZeneca (ChAdOx1 S [recombinant]) 5x10,000,000,000 viral particles/0.5ml dose solution for injection multidose vials 8 dose",
               "DOMAIN_ID": "Drug",
@@ -242,8 +227,7 @@
               "STANDARD_CONCEPT": "N",
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "dm+d"
-            },
-            "includeDescendants": true
+            }
           }
         ]
       }
@@ -253,12 +237,22 @@
     "CriteriaList": [
       {
         "DrugExposure": {
-          "CodesetId": 1
+          "CodesetId": 0
         }
       },
       {
         "DrugExposure": {
-          "DrugSourceConcept": 1
+          "DrugSourceConcept": 0
+        }
+      },
+      {
+        "Observation": {
+          "CodesetId": 0
+        }
+      },
+      {
+        "Observation": {
+          "ObservationSourceConcept": 0
         }
       }
     ],
@@ -318,10 +312,9 @@
     }
   ],
   "EndStrategy": {
-    "CustomEra": {
-      "DrugCodesetId": 3,
-      "GapDays": 112,
-      "Offset": 0
+    "DateOffset": {
+      "DateField": "StartDate",
+      "Offset": 1
     }
   },
   "CensoringCriteria": [],
