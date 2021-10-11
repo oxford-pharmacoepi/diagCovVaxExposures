@@ -522,6 +522,62 @@
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "US_EMR_Drug"
             }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "ADMIN COVID-19 VACCINE 0.5 ML INJ (JANSSEN); SINGL",
+              "CONCEPT_ID": 2042121545,
+              "CONCEPT_NAME": "ADMIN COVID-19 VACCINE 0.5 ML INJ (JANSSEN); SINGL",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "US_EMR_Drug"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "ADMIN COVID-19 VACCINE 0.5ML INJ (JANSSEN); SINGLE",
+              "CONCEPT_ID": 2042119233,
+              "CONCEPT_NAME": "ADMIN COVID-19 VACCINE 0.5ML INJ (JANSSEN); SINGLE",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "US_EMR_Drug"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "COVID-19 VACCINE, AD26.COV2.S (JANSSEN)(PF) 0.5 ML",
+              "CONCEPT_ID": 2042138459,
+              "CONCEPT_NAME": "COVID-19 VACCINE, AD26.COV2.S (JANSSEN)(PF) 0.5 ML",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "US_EMR_Drug"
+            }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "HC INJ COVID-19 VACCINE SARSCOV2 JANSSEN (J&J)",
+              "CONCEPT_ID": 2042087353,
+              "CONCEPT_NAME": "HC INJ COVID-19 VACCINE SARSCOV2 JANSSEN (J&J)",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "US_EMR_Drug"
+            }
           }
         ]
       }

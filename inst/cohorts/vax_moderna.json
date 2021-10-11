@@ -312,6 +312,20 @@
               "STANDARD_CONCEPT_CAPTION": "Non-Standard",
               "VOCABULARY_ID": "US_EMR_Drug"
             }
+          },
+          {
+            "concept": {
+              "CONCEPT_CLASS_ID": "Concept Class",
+              "CONCEPT_CODE": "RSH ONC PEMBROLIZUMAB (MODERNA MRNA-4157-P101) 200",
+              "CONCEPT_ID": 2039142356,
+              "CONCEPT_NAME": "RSH ONC PEMBROLIZUMAB (MODERNA MRNA-4157-P101) 200",
+              "DOMAIN_ID": "Observation",
+              "INVALID_REASON": "V",
+              "INVALID_REASON_CAPTION": "Valid",
+              "STANDARD_CONCEPT": "N",
+              "STANDARD_CONCEPT_CAPTION": "Non-Standard",
+              "VOCABULARY_ID": "US_EMR_Drug"
+            }
           }
         ]
       }
